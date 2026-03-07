@@ -26,8 +26,17 @@ class Post(models.Model):
  
 class Category(models.Model):
     name=models.CharField(max_length=100)
- 
-
     def __str__(self):
         return self.name
+    
+
+class Comments(models.Model):
+    post=models.ForeignKey(Post,related_name="post_comment",on_delete=models.CASCADE)
+    user=models.CharField(max_length=50)
+    comment=models.TextField(max_length=300)
+    crate_at=models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return str(self.post)
+
 
