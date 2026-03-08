@@ -1,0 +1,10 @@
+<h2>hello all posts </h2>
+
+<ul>
+  
+  {% for post  in var %}
+     <li> {{post}}   {{post.author}}  {{post.publish_date}}</li>
+   {% endfor %}
+
+</ul>
+

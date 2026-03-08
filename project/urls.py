@@ -20,9 +20,12 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
+from postapp.views import show_all_posts , show_one_post
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('posts/',show_all_posts),
 ]
 
 urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
