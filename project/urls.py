@@ -26,7 +26,7 @@ from postapp.views import show_all_posts , show_one_post
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('posts/',show_all_posts),
-    path('posts/<int:pk>',show_one_post)
+    path('posts/<int:post_id>',show_one_post)
 ]
 
 
