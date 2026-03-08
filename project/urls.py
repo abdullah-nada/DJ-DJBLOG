@@ -26,7 +26,9 @@ from postapp.views import show_all_posts , show_one_post
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('posts/',show_all_posts),
+    path('posts/<int:pk>',show_one_post)
 ]
+
 
 urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

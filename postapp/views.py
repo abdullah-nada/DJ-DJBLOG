@@ -12,5 +12,9 @@ def show_all_posts(request):
     return render(request,'posts\postlist.html',context)
 
 
-def show_one_post(request):
-    pass
+def show_one_post(request,pk):
+    data=Post.objects.get(id=pk)
+    context={
+        'var':data
+    }
+    return render(request,'posts\postdetail.html',context)
