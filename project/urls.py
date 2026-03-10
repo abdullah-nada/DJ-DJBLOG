@@ -20,13 +20,14 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from postapp.views import show_all_posts , show_one_post
+from postapp.views import show_one_post  ,Postlist ,PostDetail  , create_post
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('posts/',show_all_posts),
-    path('posts/<int:post_id>',show_one_post)
+    path('posts/',Postlist.as_view()),
+    path('posts/<int:pk>',PostDetail.as_view()),
+    path('posts/new',create_post)
 ]
 
 
