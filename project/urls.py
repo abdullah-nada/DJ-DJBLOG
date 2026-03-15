@@ -20,14 +20,15 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from postapp.views import show_one_post  ,Postlist ,PostDetail  , create_post
-
+from postapp.views import show_one_post  ,Postlist ,PostDetail  , create_post , edit_post , delete_post,Addpost, Editview , Deletepost
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('posts/',Postlist.as_view()),
     path('posts/<int:pk>',PostDetail.as_view()),
-    path('posts/new',create_post)
+    path('posts/new',Addpost.as_view()),
+    path('posts/<int:pk>/edit', Editview.as_view()),
+    path('posts/<int:pk>/delete', Deletepost.as_view()),
 ]
 
 
